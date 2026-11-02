@@ -1,0 +1,4 @@
+# dsh-better-moa bundle patch: inserts the MoA virtual model provider into a profile's layer stack.
+- insert:
+    - id: better-moa
+      name: 'dsh-better-moa'

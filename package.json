@@ -1,0 +1,68 @@
+{
+  "name": "dsh-better-moa",
+  "version": "0.9.0",
+  "repository": { "type": "git", "url": "https://github.com/AlgernonYin/dsh-better-moa.git" },
+  "description": "Hermes-style Mixture of Agents (MoA) for DeepSeek Harness: pick moa/<preset> as the session model; reference models are consulted on a cadence and their advice is logged into the conversation for a real tool-using aggregator.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./advice-renderer.js": "./advice-renderer.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "advice-renderer.js",
+    "client.advice-renderer.js",
+    "build-client-renderer.mjs",
+    "settings-panel.js",
+    "config.js",
+    "scheduler.js",
+    "scheduler-openai.js",
+    "scheduler-context.js",
+    "presets.js",
+    "adapter.js",
+    "advice.js",
+    "route.js",
+    "transcript.js",
+    "surface.js",
+    "layout.js",
+    "boundary.js",
+    "capabilities.js",
+    "guard.js",
+    "dialogue.js",
+    "budget.js",
+    "history.js",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.18.5",
+    "zod": "~4.4.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
